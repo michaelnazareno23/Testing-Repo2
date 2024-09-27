@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            display: flex;
+        }
+
+        
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            max-width: 1440px;
+            padding: 40px 30px 0;
+            margin: 0 auto;
+        }
+
+        .img-container img {
+          width: 100%;
+        }
+        .product-item-container {
+           text-align: center;
+           display: flex;
+           flex-direction: column;
+           gap: 20px;
+        }
+        .img-star {
+         width: 80px;
+         height: auto;
+         margin: 0 auto;
+        }
+        .product-link {
+         background-color: #D0BCDC !important;
+         color: #020202 !important;
+         border: 1px solid #fff;
+         width: fit-content;
+         padding: 15px 20px;
+         margin: 0 auto;
+         font-size: 14px;
+         text-decoration: none;
+        }
+  </style>
+<body>
+    <div class="container">
+      <!-- <div class="product-item-container">
+         <div class="img-container">
+               <img src="Assets/img1.jpg" alt="">
+         </div>
+         <img class="img-star" src="Assets/star.png" alt="img-star">
+         <h3 class="product-title">Product Title</h3>
+         <p class="product-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita maiores officia numquam, 
+            qui, ratione, dolore unde praesentium ducimus.
+         </p>
+         <a href="" class="product-link">BUY NOW</a>
+      </div> -->
+         
+       
+    </div>
+</body>
+<script>
+   let arrayObjects = [
+      {
+        productImage: 'Assets/img1.jpg', 
+        productTitle: 'Wig, Golden Blond #14/DB3',
+        productPrice: '$10,000.00',
+        productDescription: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita maiores officia numquam, qui, ratione, dolore unde praesentium ducimus',
+        productUrl: 'https://chavivhair.dsquared.digital/products/wig-golden-blond-14-db3/'  
+      },
+      {
+        productImage: 'Assets/img2.jpg', 
+        productTitle: 'Wig, Platinum Blonde #12',
+        productDescription: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita maiores officia numquam, qui, ratione, dolore unde praesentium ducimus',
+        productPrice: '$8,000.00',
+        productUrl: 'https://chavivhair.dsquared.digital/products/wig-platinum-blonde-12/'
+      },
+      {
+        productImage: 'Assets/img3.jpg', 
+        productTitle: 'Wig, Dark Blond #8/14',
+        productDescription: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita maiores officia numquam, qui, ratione, dolore unde praesentium ducimus',
+        productPrice: '$8,000.00',
+        productUrl: 'https://chavivhair.dsquared.digital/products/wig-dark-blond-8-14-2/'
+      },
+      {
+        productImage: 'Assets/img4.jpg', 
+        productTitle: 'Wig, Dark Blond #8/14',
+        productDescription: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita maiores officia numquam, qui, ratione, dolore unde praesentium ducimus',
+        productPrice: '$8,000.00',
+        productUrl: 'https://chavivhair.dsquared.digital/products/wig-dark-blond-8-14/'
+      },
+   ] 
+    let productData = '';
+
+   // will loop through the object arrays 
+   arrayObjects.forEach(products => {
+      // will pass through the data to the productData variable
+      // created a html structred template
+        productData += `<div class="product-item-container">
+                              <div class="img-container">
+                                    <img src="${products.productImage}" alt="">
+                              </div>
+                              <img class="img-star" src="Assets/star.png" alt="img-star">
+                              <h3 class="product-title">${products.productTitle}</h3>
+                              <p class="product-description">
+                                ${products.productDescription}
+                              </p>
+                              <a href="${products.productUrl}" class="product-link">BUY NOW</a>
+                        </div>`;
+
+    });
+
+    document.querySelector('.container').innerHTML = productData;
+
+
+ 
+</script>
+</html>
